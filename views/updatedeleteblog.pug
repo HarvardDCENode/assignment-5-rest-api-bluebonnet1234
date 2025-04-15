@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 Blog Details
+
+  .w-50.p-10.mx-auto.mb-5
+    h3 #{blog.title}
+    .p-2.border
+      p #{blog.detail}
+    p Date Posted: #{blog.createdAt}
+
+  
+
+  .row
+   .w-50.p-10.mx-auto
+     h4 Update Blog
+     form#blogform(method='POST' action='/blogs/'+blog._id)
+      .mb-3
+      .form-group
+         label.form-label(for='title') Blog Title:
+         input#title.form-control(type='text', value=blog.title name='title')
+      .mb-3
+      .form-group
+         label.form-label(for='detail') Blog Details:
+         input#detail.form-control(type='text', value=blog.detail name='detail')
+      .form-group
+         input#actiontype.form-control(type='hidden' name='actiontype' value='update')
+      .mb-3
+      input.btn.btn-primary.m-3#updatebtn(type='submit', name='formsubmit', value='Update')
+      input.btn.btn-primary#deletebtn(type='button', name='deleteblog', value='Delete')
+
+  script(src='/static/appscript.js')

@@ -1,0 +1,15 @@
+
+.row
+  .w-50.p-10.mx-auto
+     h4 Post New Blog
+     form(method='POST' action='/blogs')
+      .mb-3
+      .form-group
+         label.form-label(for='title') Blog Title:
+         input#title.form-control(type='text', placeholder='blog title' name='title')
+      .mb-3
+      .form-group
+         label.form-label(for='detail') Blog Detail:
+         input#detail.form-control(type='text', placeholder='blog detail' name='detail')
+      .mb-3
+      input.btn.btn-primary(type='submit', name='formsubmit', value='Post Blog')

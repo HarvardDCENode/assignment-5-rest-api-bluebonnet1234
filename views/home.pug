@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Welcome to My Tech Blog!
+
+  h3.mb-3 Blogs List
+
+  .w-50.p-10.mx-auto
+    ul.list-group
+      each blog in blogs
+        li.list-group-item
+          a(href=`/blogs/${blog._id}`) #{blog.title}
+
+  .p-20.mb-5
+  include newblog
+
+
